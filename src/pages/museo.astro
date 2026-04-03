@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout
+  title="Museo Biblioteca dell'Attore — Eugenio Pallestrini"
+  description="Eugenio Pallestrini Presidente del Museo Biblioteca dell'Attore di Genova dal 2007. UNESCO, collaborazioni universitarie, Adelaide Ristori."
+>
+
+  <PageHero
+    title="Museo Biblioteca dell'Attore"
+    subtitle="Presidenza dal 2007 ad oggi. Conservazione e valorizzazione del patrimonio teatrale italiano."
+    breadcrumb={[{ label: 'Museo' }]}
+  />
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6 space-y-12">
+
+      <!-- Foto museo -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-animate="fade-up">
+        <img
+          src="/images/museo-cattura.png"
+          alt="Museo Biblioteca dell'Attore"
+          class="rounded-2xl shadow-lg w-full object-cover"
+          width="500"
+          height="350"
+          loading="lazy"
+        />
+        <img
+          src="/images/museo-cattura-2.png"
+          alt="Museo Biblioteca dell'Attore - interno"
+          class="rounded-2xl shadow-lg w-full object-cover"
+          width="500"
+          height="350"
+          loading="lazy"
+        />
+      </div>
+
+      <div data-animate="fade-up">
+        <h2>La Sede Storica</h2>
+        <p class="text-muted leading-relaxed mt-4">
+          Il museo aveva sede a Villetta Serra, edificio genovese storico vicino all'antico
+          Ospedale Pammatone e dimora di Bartolomeo Bosco. Successivamente trasferito
+          in una nuova sede, continua la sua missione di custode della memoria teatrale.
+        </p>
+      </div>
+
+      <div data-animate="fade-up">
+        <h2>Risultati e Collaborazioni</h2>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-6 bg-white border border-border rounded-xl">
+            <h4 class="text-gold mb-2">Convenzione Universitaria</h4>
+            <p class="text-sm text-muted leading-relaxed">
+              Istituzionalizzazione della collaborazione con l'Universit&agrave; di Genova,
+              approvata dal Rettore Comanducci e riconfermata dal Rettore Delfino.
+            </p>
+          </div>
+          <div class="p-6 bg-white border border-border rounded-xl">
+            <h4 class="text-gold mb-2">Palazzo Ducale</h4>
+            <p class="text-sm text-muted leading-relaxed">
+              Collaborazione con Palazzo Ducale per manifestazioni come
+              Teatro Documento e Teatro Societ&agrave;.
+            </p>
+          </div>
+          <div class="p-6 bg-white border border-border rounded-xl">
+            <h4 class="text-gold mb-2">Comitato Scientifico</h4>
+            <p class="text-sm text-muted leading-relaxed">
+              Istituito per la prima volta con la partecipazione dell'Universit&agrave;
+              e delle principali realt&agrave; teatrali comunali e regionali.
+            </p>
+          </div>
+          <div class="p-6 bg-white border border-border rounded-xl">
+            <h4 class="text-gold mb-2">Con.Te.Genova (2024)</h4>
+            <p class="text-sm text-muted leading-relaxed">
+              Il museo diventa sede ufficiale per la conservazione e valorizzazione
+              dei testi teatrali in lingua genovese.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-8 bg-night-deep rounded-2xl text-ivory" data-animate="fade-up">
+        <span class="text-gold uppercase tracking-[0.15em] text-xs font-semibold">UNESCO 2022&ndash;23</span>
+        <h3 class="text-ivory mt-3 mb-4">Adelaide Ristori &mdash; Bicentenario</h3>
+        <p class="text-ivory/70 leading-relaxed">
+          Al M.B.A. &egrave; stato affidato uno dei due eventi UNESCO per il bicentenario
+          di Adelaide Ristori. La mostra <em>&ldquo;Costumi e Memorie. Genova rende omaggio
+          ad Adelaide Ristori&rdquo;</em> a Palazzo Lomellino, convegni universitari a Genova e Milano,
+          e lo spettacolo del Teatro Nazionale di Genova sulla vita della Ristori
+          con Elisabetta Pozzi.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>

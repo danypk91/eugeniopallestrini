@@ -1,0 +1,88 @@
+---
+const navItems = [
+  { label: 'Medicina', href: '/medicina' },
+  { label: 'Pubblicazioni', href: '/pubblicazioni' },
+  { label: 'Teatro', href: '/teatro' },
+  { label: 'Museo', href: '/museo' },
+  { label: 'Contatti', href: '/contatti' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-ivory/90 backdrop-blur-md border-b border-border">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-serif text-xl font-semibold text-night-deep hover:text-gold transition-colors">
+      Eugenio Pallestrini
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8" aria-label="Navigazione principale">
+      {navItems.map(({ label, href }) => (
+        <a
+          href={href}
+          class:list={[
+            'text-sm font-medium tracking-wide uppercase transition-colors',
+            currentPath === href
+              ? 'text-gold'
+              : 'text-muted hover:text-night',
+          ]}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-night"
+      aria-label="Apri menu"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-border bg-ivory"
+    aria-label="Navigazione mobile"
+  >
+    <div class="px-6 py-4 space-y-3">
+      {navItems.map(({ label, href }) => (
+        <a
+          href={href}
+          class:list={[
+            'block text-sm font-medium tracking-wide uppercase',
+            currentPath === href
+              ? 'text-gold'
+              : 'text-muted hover:text-night',
+          ]}
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('hamburger-icon');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', String(isOpen));
+    if (icon) {
+      icon.setAttribute('d', isOpen
+        ? 'M6 18L18 6M6 6l12 12'
+        : 'M4 6h16M4 12h16M4 18h16'
+      );
+    }
+  });
+</script>

@@ -1,0 +1,42 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-border bg-night-deep text-ivory/80">
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Chi -->
+      <div>
+        <h4 class="font-serif text-lg text-ivory mb-3">Eugenio Pallestrini</h4>
+        <p class="text-sm leading-relaxed text-ivory/60">
+          Medico, uomo di cultura e di istituzioni.<br />
+          Genova.
+        </p>
+      </div>
+
+      <!-- Navigazione -->
+      <div>
+        <h4 class="font-serif text-lg text-ivory mb-3">Esplora</h4>
+        <nav class="space-y-2 text-sm">
+          <a href="/medicina" class="block text-ivory/60 hover:text-gold transition-colors">Medicina</a>
+          <a href="/pubblicazioni" class="block text-ivory/60 hover:text-gold transition-colors">Pubblicazioni</a>
+          <a href="/teatro" class="block text-ivory/60 hover:text-gold transition-colors">Teatro</a>
+          <a href="/museo" class="block text-ivory/60 hover:text-gold transition-colors">Museo</a>
+          <a href="/contatti" class="block text-ivory/60 hover:text-gold transition-colors">Contatti</a>
+        </nav>
+      </div>
+
+      <!-- Contatti -->
+      <div>
+        <h4 class="font-serif text-lg text-ivory mb-3">Contatti</h4>
+        <div class="space-y-2 text-sm text-ivory/60">
+          <p>Genova, Italia</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-ivory/10 text-center text-xs text-ivory/40">
+      &copy; {currentYear} Eugenio Pallestrini. Tutti i diritti riservati.
+    </div>
+  </div>
+</footer>

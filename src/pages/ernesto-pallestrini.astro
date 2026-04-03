@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout
+  title="Prof. Ernesto Pallestrini — Fondatore della Scuola O.R.L. Genovese"
+  description="Prof. Ernesto Pallestrini (1895-1980): fondatore della Scuola ORL Genovese, direttore della Clinica Universitaria di Genova."
+>
+
+  <PageHero
+    title="Prof. Ernesto Pallestrini"
+    subtitle="1895 — 1980. Fondatore della Scuola O.R.L. Genovese, maestro della medicina italiana."
+    breadcrumb={[{ label: 'Ernesto Pallestrini' }]}
+  />
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6 space-y-12">
+
+      <div class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 items-start" data-animate="fade-up">
+        <img
+          src="/images/ernesto-pallestrini.png"
+          alt="Prof. Ernesto Pallestrini"
+          class="rounded-2xl shadow-lg w-full max-w-[200px] mx-auto md:mx-0"
+          width="254"
+          height="300"
+          loading="lazy"
+        />
+        <div>
+          <h2>Biografia</h2>
+          <p class="text-muted leading-relaxed mt-4">
+            Nato il 16 febbraio 1895 a Mede Lomellina, scomparso il 9 aprile 1980.
+            Studente al Collegio Militare di Voghera, bersagliere durante la Grande Guerra,
+            decorato con croce di guerra. Ferito a Forcella di Valmaggiore il 24 agosto 1916.
+            Laureato a Pavia.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline carriera -->
+      <div class="space-y-10">
+        <div class="relative pl-8 border-l-2 border-gold/30" data-animate="fade-up">
+          <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gold"></div>
+          <p class="text-sm text-gold font-semibold uppercase tracking-wide mb-2">1929 &ndash; 1934</p>
+          <h3>Universit&agrave; di Modena</h3>
+          <p class="mt-3 text-muted leading-relaxed">
+            Docente e Direttore della Clinica O.R.L. dell'Universit&agrave; di Modena per cinque anni.
+          </p>
+        </div>
+
+        <div class="relative pl-8 border-l-2 border-gold/30" data-animate="fade-up">
+          <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gold"></div>
+          <p class="text-sm text-gold font-semibold uppercase tracking-wide mb-2">1936 &ndash; 1965</p>
+          <h3>Universit&agrave; di Genova &amp; Ospedale San Martino</h3>
+          <p class="mt-3 text-muted leading-relaxed">
+            Docente e Direttore della Clinica Universitaria O.R.L. di Genova.
+            Primario dell'Ospedale San Martino. Quasi trent'anni alla guida
+            dell'otorinolaringoiatria genovese.
+          </p>
+        </div>
+
+        <div class="relative pl-8 border-l-2 border-gold/30" data-animate="fade-up">
+          <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gold"></div>
+          <p class="text-sm text-gold font-semibold uppercase tracking-wide mb-2">1954</p>
+          <h3>Scuola di Specializzazione</h3>
+          <p class="mt-3 text-muted leading-relaxed">
+            Fondatore della Scuola di Specializzazione Otorinolaringoiatrica
+            dell'Universit&agrave; di Genova, ancora oggi operativa.
+          </p>
+        </div>
+
+        <div class="relative pl-8 border-l-2 border-gold/30" data-animate="fade-up">
+          <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gold"></div>
+          <p class="text-sm text-gold font-semibold uppercase tracking-wide mb-2">1959 &ndash; 1960</p>
+          <h3>Presidente della Societ&agrave; Italiana di O.R.L.</h3>
+          <p class="mt-3 text-muted leading-relaxed">
+            Massimo riconoscimento della comunit&agrave; scientifica italiana nel campo
+            dell'otorinolaringoiatria.
+          </p>
+        </div>
+      </div>
+
+      <div data-animate="fade-up">
+        <h2>Pubblicazioni Principali</h2>
+        <div class="mt-6 space-y-4">
+          <div class="p-6 bg-white border border-border rounded-xl">
+            <h4>&ldquo;Aterosclerosi e Funzione labirintica&rdquo;</h4>
+            <p class="text-sm text-muted mt-1">1934</p>
+          </div>
+          <div class="p-6 bg-white border border-border rounded-xl">
+            <h4>&ldquo;Manuale di Otorinolaringoiatria&rdquo;</h4>
+            <p class="text-sm text-muted mt-1">1963</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-8 bg-ivory-dark border border-border rounded-2xl" data-animate="fade-up">
+        <p class="font-serif text-xl italic text-night-deep leading-relaxed">
+          Piazza della Vittoria 12 / 6-7, Genova &mdash;
+          l'indirizzo dello studio dove il Prof. Ernesto Pallestrini
+          ha formato generazioni di medici.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>

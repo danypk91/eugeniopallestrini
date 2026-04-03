@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Eugenio Pallestrini — Medico, Cultura, Istituzioni">
+
+  <!-- Intro -->
+  <section class="py-16 md:py-24 bg-night-deep text-ivory relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 items-center">
+      <div data-animate="fade-up">
+        <p class="text-gold uppercase tracking-[0.2em] text-sm font-medium mb-4">Genova</p>
+        <h1 class="text-ivory mb-6">
+          Eugenio <br class="hidden md:block" />Pallestrini
+        </h1>
+        <p class="text-lg md:text-xl text-ivory/70 max-w-2xl leading-relaxed">
+          Primario O.R.L. all'Ospedale San Martino di Genova, Presidente del Consiglio Provinciale,
+          Presidente del Teatro Stabile di Genova e del Museo Biblioteca dell'Attore.
+          Una vita tra medicina, cultura e istituzioni.
+        </p>
+      </div>
+      <div data-animate="fade-left">
+        <img
+          src="/images/eugenio.jpg"
+          alt="Eugenio Pallestrini"
+          class="w-48 mx-auto md:mx-0 md:w-64 lg:w-72 rounded-2xl shadow-2xl object-cover"
+          width="288"
+          height="360"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <!-- Card grande: Medicina (occupa 2 colonne) -->
+        <a href="/medicina" class="group md:col-span-2 bg-white border border-border rounded-2xl p-8 md:p-10 hover:border-gold/40 hover:shadow-lg transition-all duration-300" data-animate="fade-up">
+          <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Medicina &amp; Ricerca</span>
+          <h2 class="text-2xl md:text-3xl mb-4 group-hover:text-gold transition-colors">Attivit&agrave; Clinica e Scientifica</h2>
+          <p class="text-muted leading-relaxed max-w-xl">
+            Primario della Divisione O.R.L. dell'Ospedale San Martino di Genova dal 1982 al 2006.
+            Libero docente in Clinica O.R.L., specialista in vestibologia, allergologia e antibioticoterapia.
+          </p>
+          <span class="inline-flex items-center gap-2 mt-6 text-sm font-medium text-gold group-hover:gap-3 transition-all">
+            Scopri di pi&ugrave;
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </span>
+        </a>
+
+        <!-- Card: Teatro -->
+        <a href="/teatro" class="group bg-white border border-border rounded-2xl p-8 hover:border-gold/40 hover:shadow-lg transition-all duration-300" data-animate="fade-up">
+          <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Teatro</span>
+          <h2 class="text-xl mb-4 group-hover:text-gold transition-colors">Teatro Stabile di Genova</h2>
+          <p class="text-muted text-sm leading-relaxed">
+            Presidente dal 2006 al 2016. Un decennio di innovazione statutaria, collaborazioni culturali e sfide istituzionali.
+          </p>
+          <span class="inline-flex items-center gap-2 mt-6 text-sm font-medium text-gold group-hover:gap-3 transition-all">
+            Esplora
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </span>
+        </a>
+
+        <!-- Card: Museo -->
+        <a href="/museo" class="group bg-white border border-border rounded-2xl p-8 hover:border-gold/40 hover:shadow-lg transition-all duration-300" data-animate="fade-up">
+          <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Cultura</span>
+          <h2 class="text-xl mb-4 group-hover:text-gold transition-colors">Museo Biblioteca dell'Attore</h2>
+          <p class="text-muted text-sm leading-relaxed">
+            Presidente dal 2007 ad oggi. Sede UNESCO, collaborazione universitaria, valorizzazione del patrimonio teatrale.
+          </p>
+          <span class="inline-flex items-center gap-2 mt-6 text-sm font-medium text-gold group-hover:gap-3 transition-all">
+            Esplora
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </span>
+        </a>
+
+        <!-- Card: Pubblicazioni -->
+        <a href="/pubblicazioni" class="group bg-white border border-border rounded-2xl p-8 hover:border-gold/40 hover:shadow-lg transition-all duration-300" data-animate="fade-up">
+          <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Pubblicazioni</span>
+          <h2 class="text-xl mb-4 group-hover:text-gold transition-colors">Libri &amp; Ricerca</h2>
+          <p class="text-muted text-sm leading-relaxed">
+            Autore e curatore di testi su antibioticoterapia, vestibologia, allergologia in O.R.L. e storia della disciplina.
+          </p>
+          <span class="inline-flex items-center gap-2 mt-6 text-sm font-medium text-gold group-hover:gap-3 transition-all">
+            Catalogo
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </span>
+        </a>
+
+        <!-- Card larga: Vita pubblica -->
+        <a href="/contatti" class="group md:col-span-2 relative bg-night-deep border border-night-deep rounded-2xl p-8 md:p-10 hover:border-gold/40 transition-all duration-300 overflow-hidden" data-animate="fade-up">
+          <img
+            src="/images/spianata-genova.jpg"
+            alt=""
+            class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-25 transition-opacity duration-500"
+            loading="lazy"
+          />
+          <div class="relative z-10">
+            <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Vita Pubblica</span>
+            <h2 class="text-2xl text-ivory mb-4 group-hover:text-gold transition-colors">Istituzioni &amp; Impegno Civile</h2>
+            <p class="text-ivory/60 leading-relaxed max-w-xl">
+              Presidente del Consiglio Provinciale di Genova (1993&ndash;1997). Una carriera dedicata
+              alle istituzioni genovesi, dalla sanit&agrave; alla cultura, dalla politica alla ricerca.
+            </p>
+          </div>
+        </a>
+
+        <!-- Card: Eredit&agrave; -->
+        <a href="/ernesto-pallestrini" class="group bg-ivory-dark border border-border rounded-2xl p-8 hover:border-gold/40 hover:shadow-lg transition-all duration-300" data-animate="fade-up">
+          <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Eredit&agrave;</span>
+          <h2 class="text-xl mb-4 group-hover:text-gold transition-colors">Prof. Ernesto Pallestrini</h2>
+          <p class="text-muted text-sm leading-relaxed">
+            Il padre: fondatore della Scuola O.R.L. Genovese, direttore della Clinica Universitaria, protagonista della medicina italiana.
+          </p>
+          <span class="inline-flex items-center gap-2 mt-6 text-sm font-medium text-gold group-hover:gap-3 transition-all">
+            Leggi
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

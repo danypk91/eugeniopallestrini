@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout
+  title="Teatro Stabile di Genova — Eugenio Pallestrini"
+  description="Eugenio Pallestrini Presidente del Teatro Stabile di Genova (2006-2016): innovazione, sfide e risultati."
+>
+
+  <PageHero
+    title="Teatro Stabile di Genova"
+    subtitle="Un decennio di presidenza tra innovazione statutaria, sfide economiche e riconoscimenti nazionali."
+    breadcrumb={[{ label: 'Teatro' }]}
+  />
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <div class="prose-custom space-y-10">
+
+        <!-- Foto Genova / Teatro -->
+        <div class="rounded-2xl overflow-hidden shadow-lg" data-animate="fade-up">
+          <img
+            src="/images/corte.jpg"
+            alt="Teatro Stabile di Genova"
+            class="w-full h-64 md:h-80 object-cover"
+            width="800"
+            height="320"
+            loading="lazy"
+          />
+        </div>
+
+        <div data-animate="fade-up">
+          <h2>La Presidenza (2006&ndash;2016)</h2>
+          <p class="text-muted leading-relaxed mt-4">
+            La nomina venne approvata dal Sindaco su indicazione di Ivo Chiesa e del precedente
+            presidente Giovanni Salvarezza. Un mandato durato un decennio, caratterizzato da
+            profondi cambiamenti istituzionali e culturali.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-animate="fade-up">
+          <div class="p-6 bg-white border border-border rounded-xl">
+            <h4 class="text-gold mb-2">Innovazione Statutaria</h4>
+            <p class="text-sm text-muted leading-relaxed">
+              Nuovo statuto per concorrere al riconoscimento di Teatro Nazionale.
+              Modalit&agrave; assicurativa innovativa e miglioramenti in sicurezza
+              e prevenzione per i lavoratori dello spettacolo.
+            </p>
+          </div>
+          <div class="p-6 bg-white border border-border rounded-xl">
+            <h4 class="text-gold mb-2">Nuova Associazione</h4>
+            <p class="text-sm text-muted leading-relaxed">
+              Creazione di una nuova associazione per rafforzare il contatto
+              tra il teatro e il suo pubblico, ampliando la base di partecipazione culturale.
+            </p>
+          </div>
+        </div>
+
+        <div data-animate="fade-up">
+          <h2>Attivit&agrave; Culturali</h2>
+          <p class="text-muted leading-relaxed mt-4">
+            Tre filoni di collaborazione culturale hanno caratterizzato il periodo:
+          </p>
+          <div class="mt-6 space-y-4">
+            <div class="pl-6 border-l-2 border-gold/30">
+              <h4>Teatro Documento</h4>
+              <p class="text-sm text-muted mt-1">Rivisitazione del teatro storico-politico, portando in scena temi di attualit&agrave; attraverso la lente della storia.</p>
+            </div>
+            <div class="pl-6 border-l-2 border-gold/30">
+              <h4>Teatro e Societ&agrave;</h4>
+              <p class="text-sm text-muted mt-1">Analisi di scandali e processi legati alle programmazioni, un ponte tra la scena teatrale e il dibattito civile.</p>
+            </div>
+            <div class="pl-6 border-l-2 border-gold/30">
+              <h4>Spazio Teatrale</h4>
+              <p class="text-sm text-muted mt-1">Esame degli aspetti scientifici dell'attivit&agrave; teatrale, un approccio interdisciplinare unico nel panorama italiano.</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-animate="fade-up">
+          <h2>Sfide e Traguardi</h2>
+          <p class="text-muted leading-relaxed mt-4">
+            La scomparsa della Provincia ha portato difficolt&agrave; economiche significative.
+            Il mancato riconoscimento come Teatro Nazionale nella prima selezione ministeriale
+            ha richiesto determinazione e visione strategica.
+          </p>
+          <p class="text-muted leading-relaxed mt-4">
+            Il concorso europeo presieduto da Pallestrini ha portato <strong>Angelo Pastore</strong> alla direzione.
+            Durante il processo, <strong>Muriel Mayette</strong>, gi&agrave; direttrice dell'Acad&eacute;mie Fran&ccedil;aise,
+            si ritir&ograve; per intervento del governo francese.
+          </p>
+        </div>
+
+        <div class="p-8 bg-ivory-dark border border-border rounded-2xl" data-animate="fade-up">
+          <p class="font-serif text-xl italic text-night-deep leading-relaxed">
+            &ldquo;Il ciclo si chiuse con bilancio in pareggio e risultati di programma
+            riconosciuti nazionalmente e internazionalmente.&rdquo;
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
