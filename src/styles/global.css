@@ -61,7 +61,28 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
 }
+
+/* Divider decorativo oro */
+.divider-gold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+.divider-gold::before,
+.divider-gold::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to var(--dir, right), transparent, var(--color-gold), transparent);
+}
+
+.divider-gold::before { --dir: right; }
+.divider-gold::after { --dir: left; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
@@ -88,4 +109,32 @@ a:hover {
 ::selection {
   background-color: var(--color-gold);
   color: var(--color-white);
+}
+
+/* Card hover con ombra GPU-accelerata via opacity su pseudo-elemento */
+.card-lift {
+  position: relative;
+  will-change: transform;
+  transition: transform 0.3s ease-out, border-color 0.3s ease-out;
+}
+
+.card-lift::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in oklab, var(--color-gold) 40%, transparent);
+}
+
+.card-lift:hover::after {
+  opacity: 1;
 }

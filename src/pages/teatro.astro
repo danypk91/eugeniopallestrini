@@ -10,16 +10,15 @@ import PageHero from '../components/PageHero.astro';
 
   <PageHero
     title="Teatro Stabile di Genova"
-    subtitle="Un decennio di presidenza tra innovazione statutaria, sfide economiche e riconoscimenti nazionali."
-    breadcrumb={[{ label: 'Teatro' }]}
+    subtitle="Presidente del Teatro Stabile di Genova (2006–2016)"
   />
 
   <section class="py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-6">
 
-      <div class="prose-custom space-y-10">
+      <div class="space-y-10">
 
-        <!-- Foto Genova / Teatro -->
+        <!-- Foto -->
         <div class="rounded-2xl overflow-hidden shadow-lg" data-animate="fade-up">
           <img
             src="/images/corte.jpg"
@@ -31,72 +30,157 @@ import PageHero from '../components/PageHero.astro';
           />
         </div>
 
+        <!-- La nomina -->
         <div data-animate="fade-up">
-          <h2>La Presidenza (2006&ndash;2016)</h2>
+          <h2>La Nomina</h2>
           <p class="text-muted leading-relaxed mt-4">
-            La nomina venne approvata dal Sindaco su indicazione di Ivo Chiesa e del precedente
-            presidente Giovanni Salvarezza. Un mandato durato un decennio, caratterizzato da
-            profondi cambiamenti istituzionali e culturali.
+            La presidenza ebbe inizio nel 2006, quando Eugenio Pallestrini venne approvato dal Sindaco
+            su indicazione di Ivo Chiesa e del precedente Presidente Giovanni Salvarezza.
+            Pallestrini aveva dimostrato attivit&agrave; come membro dell'Assemblea e del Consiglio
+            in rappresentanza prima della Provincia (Presidente Marta Vincenzi) e successivamente
+            del Comune (Sindaco Beppe Pericu).
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-animate="fade-up">
-          <div class="p-6 bg-white border border-border rounded-xl">
-            <h4 class="text-gold mb-2">Innovazione Statutaria</h4>
-            <p class="text-sm text-muted leading-relaxed">
-              Nuovo statuto per concorrere al riconoscimento di Teatro Nazionale.
-              Modalit&agrave; assicurativa innovativa e miglioramenti in sicurezza
-              e prevenzione per i lavoratori dello spettacolo.
-            </p>
-          </div>
-          <div class="p-6 bg-white border border-border rounded-xl">
-            <h4 class="text-gold mb-2">Nuova Associazione</h4>
-            <p class="text-sm text-muted leading-relaxed">
-              Creazione di una nuova associazione per rafforzare il contatto
-              tra il teatro e il suo pubblico, ampliando la base di partecipazione culturale.
-            </p>
+        <!-- Innovazioni -->
+        <div data-animate="fade-up">
+          <h2>Un Decennio di Innovazioni (2006&ndash;2016)</h2>
+          <p class="text-muted leading-relaxed mt-4">
+            Nel corso della sua presidenza, Pallestrini realizz&ograve; importanti innovazioni organizzative:
+          </p>
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 bg-white border border-border rounded-xl">
+              <h4 class="text-gold mb-2">Nuovo Statuto</h4>
+              <p class="text-sm text-muted leading-relaxed">
+                Necessario per concorrere al riconoscimento di Teatro Nazionale.
+              </p>
+            </div>
+            <div class="p-6 bg-white border border-border rounded-xl">
+              <h4 class="text-gold mb-2">Innovazione Assicurativa</h4>
+              <p class="text-sm text-muted leading-relaxed">
+                Nuove modalit&agrave; assicurative con miglioramento delle prestazioni.
+              </p>
+            </div>
+            <div class="p-6 bg-white border border-border rounded-xl">
+              <h4 class="text-gold mb-2">Sicurezza e Prevenzione</h4>
+              <p class="text-sm text-muted leading-relaxed">
+                Protocolli avanzati di sicurezza e prevenzione per i lavoratori dello spettacolo e il pubblico.
+              </p>
+            </div>
+            <div class="p-6 bg-white border border-border rounded-xl">
+              <h4 class="text-gold mb-2">Associazione Teatrale</h4>
+              <p class="text-sm text-muted leading-relaxed">
+                Nuova forma di coinvolgimento del pubblico attraverso un'associazione
+                da lui fondata e inizialmente diretta.
+              </p>
+            </div>
           </div>
         </div>
 
+        <!-- Attività culturali -->
         <div data-animate="fade-up">
           <h2>Attivit&agrave; Culturali</h2>
           <p class="text-muted leading-relaxed mt-4">
-            Tre filoni di collaborazione culturale hanno caratterizzato il periodo:
+            La contemporanea presidenza del Museo Biblioteca dell'Attore e i rapporti
+            collaborativi con la presidenza di Palazzo Ducale (Presidente Luca Borzani)
+            consentirono significative iniziative culturali:
           </p>
           <div class="mt-6 space-y-4">
             <div class="pl-6 border-l-2 border-gold/30">
               <h4>Teatro Documento</h4>
-              <p class="text-sm text-muted mt-1">Rivisitazione del teatro storico-politico, portando in scena temi di attualit&agrave; attraverso la lente della storia.</p>
+              <p class="text-sm text-muted mt-1">
+                Rivisitazione del percorso storico-politico del Teatro, portando in scena
+                temi di attualit&agrave; attraverso la lente della storia.
+              </p>
             </div>
             <div class="pl-6 border-l-2 border-gold/30">
               <h4>Teatro e Societ&agrave;</h4>
-              <p class="text-sm text-muted mt-1">Analisi di scandali e processi legati alle programmazioni, un ponte tra la scena teatrale e il dibattito civile.</p>
+              <p class="text-sm text-muted mt-1">
+                Analisi di scandali e processi legati alle programmazioni teatrali,
+                un ponte tra la scena e il dibattito civile.
+              </p>
             </div>
             <div class="pl-6 border-l-2 border-gold/30">
               <h4>Spazio Teatrale</h4>
-              <p class="text-sm text-muted mt-1">Esame degli aspetti scientifici dell'attivit&agrave; teatrale, un approccio interdisciplinare unico nel panorama italiano.</p>
+              <p class="text-sm text-muted mt-1">
+                Esame degli aspetti scientifici dell'attivit&agrave; teatrale,
+                un approccio interdisciplinare unico nel panorama italiano.
+              </p>
             </div>
           </div>
+          <p class="text-muted leading-relaxed mt-6">
+            Tutte le attivit&agrave; furono realizzate attraverso la collaborazione tra
+            presidenza, consiglio, assemblea e direzione.
+          </p>
         </div>
 
+        <!-- Sfide del periodo finale -->
         <div data-animate="fade-up">
-          <h2>Sfide e Traguardi</h2>
-          <p class="text-muted leading-relaxed mt-4">
-            La scomparsa della Provincia ha portato difficolt&agrave; economiche significative.
-            Il mancato riconoscimento come Teatro Nazionale nella prima selezione ministeriale
-            ha richiesto determinazione e visione strategica.
+          <h2>Le Sfide del Periodo Finale</h2>
+
+          <h3 class="mt-6">Difficolt&agrave; Economiche</h3>
+          <p class="text-muted leading-relaxed mt-3">
+            La scomparsa della Provincia e il rifiuto della Citt&agrave; Metropolitana
+            di sostituirla come socio fondatore crearono significative difficolt&agrave; finanziarie.
+          </p>
+
+          <h3 class="mt-8">La Questione del Teatro Nazionale</h3>
+          <p class="text-muted leading-relaxed mt-3">
+            Il mancato riconoscimento come Teatro Nazionale da parte del Ministero
+            fu ritenuto inaccettabile data la storia e la qualit&agrave; dell'istituzione.
+            Pallestrini present&ograve; ricorso al Ministero: un'azione difficile, dato il rapporto
+            di dipendenza da quel Ministero, condotta con notevole equilibrio dal presidente
+            e dal direttore, senza cedere alle pressioni enfatiche di alcuni consiglieri.
           </p>
           <p class="text-muted leading-relaxed mt-4">
-            Il concorso europeo presieduto da Pallestrini ha portato <strong>Angelo Pastore</strong> alla direzione.
-            Durante il processo, <strong>Muriel Mayette</strong>, gi&agrave; direttrice dell'Acad&eacute;mie Fran&ccedil;aise,
-            si ritir&ograve; per intervento del governo francese.
+            L'equilibrio nel condurre questo ricorso mantenne livelli di contributo importanti,
+            superiori a quelli di molti Teatri Nazionali effettivi, e contribu&igrave; al riconoscimento
+            di Teatro Nazionale ottenuto dalla successiva amministrazione Duci-Pastore,
+            che incluse anche la fusione con il Teatro dell'Archivolto.
           </p>
         </div>
 
+        <!-- Concorso europeo -->
+        <div data-animate="fade-up">
+          <h2>Il Concorso Europeo per la Direzione</h2>
+          <p class="text-muted leading-relaxed mt-4">
+            A seguito della decisione di Carlo Repetti di concludere il proprio mandato,
+            Pallestrini presiedette un concorso europeo per la scelta del nuovo direttore.
+            Il procedimento fu unanimemente riconosciuto per correttezza e trasparenza.
+          </p>
+          <p class="text-muted leading-relaxed mt-4">
+            Durante il processo, <strong>Muriel Mayette</strong>, gi&agrave; Direttrice dell'Acad&eacute;mie Fran&ccedil;aise,
+            ritir&ograve; la propria candidatura a seguito dell'intervento del governo francese,
+            che le offr&igrave; un ruolo di ambasciatrice culturale in Francia.
+            Nonostante i numerosi candidati qualificati, <strong>Angelo Pastore</strong> venne selezionato come nuovo direttore.
+          </p>
+        </div>
+
+        <!-- Chiusura ciclo -->
+        <div data-animate="fade-up">
+          <h2>La Chiusura del Ciclo Amministrativo</h2>
+          <p class="text-muted leading-relaxed mt-4">
+            Verso la fine del mandato, il Sindaco Marco Doria chiese la chiusura anticipata
+            del ciclo amministrativo con dimissioni immediate dell'assemblea e del consiglio,
+            per consentire la formazione di nuovi organi allineati alle preferenze comunali.
+            Ci&ograve; avvenne senza preavviso quando i consiglieri di nomina comunale presentarono
+            improvvisamente le dimissioni a pochi mesi dalla scadenza naturale.
+          </p>
+          <p class="text-muted leading-relaxed mt-4">
+            Pur obiettando a questa interferenza politica inelegante e inappropriata,
+            presidenza, consiglio e assemblea scelsero di non opporsi al principale rappresentante
+            comunale e socio fondatore. Rifiutarono tuttavia le dimissioni dei consiglieri comunali
+            e consentirono la resignazione generale degli organi solo &ldquo;un mese&rdquo; prima
+            della scadenza naturale.
+          </p>
+        </div>
+
+        <!-- Citazione finale -->
         <div class="p-8 bg-ivory-dark border border-border rounded-2xl" data-animate="fade-up">
           <p class="font-serif text-xl italic text-night-deep leading-relaxed">
-            &ldquo;Il ciclo si chiuse con bilancio in pareggio e risultati di programma
-            riconosciuti nazionalmente e internazionalmente.&rdquo;
+            &ldquo;Il complicato ciclo amministrativo finale del vecchio Teatro Stabile
+            si chiuse politicamente con bilancio completamente in pareggio e risultati
+            di programma riconosciuti a livello nazionale e internazionale.&rdquo;
           </p>
         </div>
 

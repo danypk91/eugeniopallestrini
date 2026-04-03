@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -55,7 +56,12 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
       "url": "https://www.eugeniopallestrini.it"
     })} />
 
+    <!-- Preload font critici -->
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <ClientRouter />
   </head>
   <body class="min-h-screen flex flex-col">
     <Header />
@@ -76,21 +82,49 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
         'fade-right': { x: -40, opacity: 0 },
       };
 
-      document.querySelectorAll<HTMLElement>('[data-animate]').forEach((el) => {
-        const type = el.dataset.animate || 'fade-up';
-        const from = animations[type] || animations['fade-up'];
+      function initAnimations() {
+        ScrollTrigger.getAll().forEach((t) => t.kill());
 
-        gsap.from(el, {
-          ...from,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 85%',
-            once: true,
-          },
+        // Stagger: raggruppa gli elementi per container [data-stagger]
+        document.querySelectorAll<HTMLElement>('[data-stagger]').forEach((container) => {
+          const children = container.querySelectorAll<HTMLElement>('[data-animate]');
+          children.forEach((el, i) => {
+            const type = el.dataset.animate || 'fade-up';
+            const from = animations[type] || animations['fade-up'];
+            gsap.from(el, {
+              ...from,
+              duration: 0.8,
+              delay: i * 0.12,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 85%',
+                once: true,
+              },
+            });
+          });
         });
-      });
+
+        // Elementi singoli (non dentro un container stagger)
+        document.querySelectorAll<HTMLElement>('[data-animate]').forEach((el) => {
+          if (el.closest('[data-stagger]')) return;
+          const type = el.dataset.animate || 'fade-up';
+          const from = animations[type] || animations['fade-up'];
+          gsap.from(el, {
+            ...from,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 85%',
+              once: true,
+            },
+          });
+        });
+      }
+
+      initAnimations();
+      document.addEventListener('astro:after-swap', initAnimations);
     </script>
   </body>
 </html>

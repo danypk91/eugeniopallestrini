@@ -8,42 +8,49 @@ const libri = [
     autori: 'Pallestrini E., Marcucci L., Schito G.',
     editore: 'Accademia Nazionale di Medicina — Forum editore',
     anno: 2000,
+    copertina: '/images/libri/antibioticoterapia.jpg',
   },
   {
     titolo: 'D.R.G. R.O.D. in O.R.L.',
     autori: 'A cura di Pallestrini E.',
     editore: 'Pacini editore — Quaderni monografici di aggiornamento A.O.O.I.',
     anno: 1998,
+    copertina: '/images/libri/drg-rod.jpg',
   },
   {
     titolo: 'Allergie In Otorinolaringoiatria: Tecniche Diagnostiche e Terapeutiche',
     autori: 'Pallestrini E., Passali D.',
     editore: 'Pacini editore / Forum Service — Scuola Superiore Scienze Biomediche',
     anno: 1992,
+    copertina: '/images/libri/allergie-orl.png',
   },
   {
     titolo: 'Le Manifestazioni dell\'A.I.D.S. in Otorinolaringoiatria',
     autori: 'A cura di Mencacci P., Pallestrini E., Sperati G.',
     editore: 'Pacini editore — Convegno Aggiornamento AOOI, Lucca',
     anno: 1992,
+    copertina: '/images/libri/aids-orl.jpg',
   },
   {
     titolo: 'Storia della O.R.L. a Genova e Torino',
     autori: 'Pallestrini E., Sperati G.',
     editore: 'In Dino Felisati "I Cento Anni della Otorinolaringoiatria Italiana" — Giunti editore',
     anno: 1992,
+    copertina: '/images/libri/storia-orl.jpg',
   },
   {
     titolo: 'Otorinolaringoiatria per infermieri professionali',
     autori: 'Pallestrini E., Dato M.T.',
     editore: 'Sorbona editore',
     anno: 1991,
+    copertina: '/images/libri/orl-infermieri.jpg',
   },
   {
     titolo: 'Linee Guida Tonsillectomia — Istituto Superiore di Sanità',
     autori: 'Contributo di Pallestrini E.',
     editore: 'Istituto Superiore di Sanità — Documento 15',
     anno: 2008,
+    copertina: '/images/libri/linee-guida-tonsillectomia.png',
   },
   {
     titolo: 'Fascicolo Dipartimentale DRTC Genova',
@@ -62,22 +69,31 @@ const libri = [
   <PageHero
     title="Pubblicazioni"
     subtitle="Libri, monografie e contributi scientifici nell'ambito dell'otorinolaringoiatria."
-    breadcrumb={[{ label: 'Pubblicazioni' }]}
   />
 
   <section class="py-16 md:py-24">
-    <div class="max-w-4xl mx-auto px-6">
+    <div class="max-w-5xl mx-auto px-6">
 
-      <div class="space-y-6">
+      <div class="space-y-8">
         {libri.map((libro) => (
-          <article class="p-6 md:p-8 bg-white border border-border rounded-xl hover:border-gold/30 transition-colors" data-animate="fade-up">
-            <div class="flex items-start justify-between gap-4">
-              <div class="flex-1">
-                <h3 class="text-lg md:text-xl">{libro.titolo}</h3>
-                <p class="text-muted mt-2">{libro.autori}</p>
-                <p class="text-sm text-muted-light mt-1">{libro.editore}</p>
+          <article class="card-lift group flex flex-col sm:flex-row gap-6 p-6 md:p-8 bg-white border border-border rounded-xl" data-animate="fade-up">
+            {libro.copertina ? (
+              <div class="shrink-0 sm:w-32 md:w-36">
+                <img
+                  src={libro.copertina}
+                  alt={`Copertina: ${libro.titolo}`}
+                  class="w-32 sm:w-full rounded-lg shadow-md object-cover"
+                  loading="lazy"
+                />
               </div>
-              <span class="shrink-0 text-2xl font-serif font-semibold text-gold/60">{libro.anno}</span>
+            ) : null}
+            <div class="flex-1 flex flex-col justify-center">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="text-lg md:text-xl">{libro.titolo}</h3>
+                <span class="shrink-0 text-2xl font-serif font-semibold text-gold/60">{libro.anno}</span>
+              </div>
+              <p class="text-muted mt-2">{libro.autori}</p>
+              <p class="text-sm text-muted-light mt-1">{libro.editore}</p>
             </div>
           </article>
         ))}

@@ -5,39 +5,78 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Eugenio Pallestrini — Medico, Cultura, Istituzioni">
 
   <!-- Intro -->
-  <section class="py-16 md:py-24 bg-night-deep text-ivory relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 items-center">
-      <div data-animate="fade-up">
-        <p class="text-gold uppercase tracking-[0.2em] text-sm font-medium mb-4">Genova</p>
-        <h1 class="text-ivory mb-6">
-          Eugenio <br class="hidden md:block" />Pallestrini
-        </h1>
-        <p class="text-lg md:text-xl text-ivory/70 max-w-2xl leading-relaxed">
-          Primario O.R.L. all'Ospedale San Martino di Genova, Presidente del Consiglio Provinciale,
-          Presidente del Teatro Stabile di Genova e del Museo Biblioteca dell'Attore.
-          Una vita tra medicina, cultura e istituzioni.
-        </p>
-      </div>
-      <div data-animate="fade-left">
+  <section class="py-10 md:py-24 bg-night-deep text-ivory relative overflow-hidden">
+    <!-- Sfondo sfumato per profondità -->
+    <div class="absolute inset-0 bg-gradient-to-br from-night-deep via-night-deep to-night opacity-80"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <!-- Mobile: layout compatto orizzontale -->
+      <div class="flex items-center gap-5 md:hidden mb-5" data-animate="fade-up">
         <img
           src="/images/eugenio.jpg"
           alt="Eugenio Pallestrini"
-          class="w-48 mx-auto md:mx-0 md:w-64 lg:w-72 rounded-2xl shadow-2xl object-cover"
-          width="288"
-          height="360"
+          class="w-20 h-20 rounded-full object-cover shadow-lg ring-2 ring-gold/30 shrink-0"
+          width="80"
+          height="80"
           loading="eager"
         />
+        <div>
+          <p class="text-gold uppercase tracking-[0.2em] text-xs font-medium mb-1">Genova</p>
+          <h1 class="text-ivory text-2xl leading-tight">Eugenio Pallestrini</h1>
+        </div>
       </div>
+      <p class="md:hidden text-base text-ivory/70 leading-relaxed mb-2" data-animate="fade-up">
+        Primario O.R.L., Presidente del Teatro Stabile e del Museo Biblioteca dell'Attore.
+      </p>
+
+      <!-- Desktop: layout originale -->
+      <div class="hidden md:grid md:grid-cols-[1fr_auto] gap-10 items-center">
+        <div data-animate="fade-up">
+          <p class="text-gold uppercase tracking-[0.2em] text-sm font-medium mb-4">Genova</p>
+          <h1 class="text-ivory mb-6">
+            Eugenio <br />Pallestrini
+          </h1>
+          <p class="text-xl text-ivory/70 max-w-2xl leading-relaxed">
+            Primario O.R.L. all'Ospedale San Martino di Genova, Presidente del Consiglio Provinciale,
+            Presidente del Teatro Stabile di Genova e del Museo Biblioteca dell'Attore.
+            Una vita tra medicina, cultura e istituzioni.
+          </p>
+        </div>
+        <div data-animate="fade-left">
+          <img
+            src="/images/eugenio.jpg"
+            alt="Eugenio Pallestrini"
+            class="w-64 lg:w-72 rounded-2xl shadow-2xl object-cover"
+            width="288"
+            height="360"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citazione -->
+  <section class="relative py-20 md:py-28 bg-night-deep overflow-hidden">
+    <div class="absolute inset-0 opacity-30" style="background-image: url('/images/spianata-genova.jpg'); background-size: cover; background-position: center;"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-night-deep/70 via-night-deep/50 to-night-deep/70"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center" data-animate="fade-up">
+      <span class="divider-gold text-gold/50 text-lg mb-8 block">&loz;</span>
+      <blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl text-ivory/90 italic leading-snug">
+        &laquo;La medicina mi ha insegnato ad ascoltare. Il teatro, a comprendere.
+        Genova le ha tenute insieme.&raquo;
+      </blockquote>
+      <p class="mt-8 text-ivory/50 text-sm uppercase tracking-[0.2em]">Eugenio Pallestrini</p>
     </div>
   </section>
 
   <!-- Bento Grid -->
   <section class="py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5" data-stagger>
 
         <!-- Card grande: Medicina (occupa 2 colonne) -->
-        <a href="/medicina" class="group md:col-span-2 bg-white border border-border rounded-2xl p-8 md:p-10 hover:border-gold/40 hover:shadow-lg transition-all duration-300" data-animate="fade-up">
+        <a href="/medicina" class="card-lift group md:col-span-2 bg-white border border-border rounded-2xl p-8 md:p-10" data-animate="fade-up">
           <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Medicina &amp; Ricerca</span>
           <h2 class="text-2xl md:text-3xl mb-4 group-hover:text-gold transition-colors">Attivit&agrave; Clinica e Scientifica</h2>
           <p class="text-muted leading-relaxed max-w-xl">
@@ -51,7 +90,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </a>
 
         <!-- Card: Teatro -->
-        <a href="/teatro" class="group bg-white border border-border rounded-2xl p-8 hover:border-gold/40 hover:shadow-lg transition-all duration-300" data-animate="fade-up">
+        <a href="/teatro" class="card-lift group bg-white border border-border rounded-2xl p-8" data-animate="fade-up">
           <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Teatro</span>
           <h2 class="text-xl mb-4 group-hover:text-gold transition-colors">Teatro Stabile di Genova</h2>
           <p class="text-muted text-sm leading-relaxed">
@@ -64,7 +103,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </a>
 
         <!-- Card: Museo -->
-        <a href="/museo" class="group bg-white border border-border rounded-2xl p-8 hover:border-gold/40 hover:shadow-lg transition-all duration-300" data-animate="fade-up">
+        <a href="/museo" class="card-lift group bg-white border border-border rounded-2xl p-8" data-animate="fade-up">
           <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Cultura</span>
           <h2 class="text-xl mb-4 group-hover:text-gold transition-colors">Museo Biblioteca dell'Attore</h2>
           <p class="text-muted text-sm leading-relaxed">
@@ -77,7 +116,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </a>
 
         <!-- Card: Pubblicazioni -->
-        <a href="/pubblicazioni" class="group bg-white border border-border rounded-2xl p-8 hover:border-gold/40 hover:shadow-lg transition-all duration-300" data-animate="fade-up">
+        <a href="/pubblicazioni" class="card-lift group bg-white border border-border rounded-2xl p-8" data-animate="fade-up">
           <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Pubblicazioni</span>
           <h2 class="text-xl mb-4 group-hover:text-gold transition-colors">Libri &amp; Ricerca</h2>
           <p class="text-muted text-sm leading-relaxed">
@@ -90,17 +129,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </a>
 
         <!-- Card larga: Vita pubblica -->
-        <a href="/contatti" class="group md:col-span-2 relative bg-night-deep border border-night-deep rounded-2xl p-8 md:p-10 hover:border-gold/40 transition-all duration-300 overflow-hidden" data-animate="fade-up">
+        <a href="/contatti" class="card-lift group md:col-span-2 relative bg-night-deep border border-night-deep rounded-2xl p-8 md:p-10 overflow-hidden" data-animate="fade-up">
           <img
             src="/images/spianata-genova.jpg"
             alt=""
-            class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-25 transition-opacity duration-500"
+            class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-35 transition-opacity duration-500"
             loading="lazy"
           />
+          <!-- Overlay gradient per leggibilità testo a sinistra, immagine visibile a destra -->
+          <div class="absolute inset-0 bg-gradient-to-r from-night-deep/80 via-night-deep/50 to-transparent"></div>
           <div class="relative z-10">
             <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Vita Pubblica</span>
-            <h2 class="text-2xl text-ivory mb-4 group-hover:text-gold transition-colors">Istituzioni &amp; Impegno Civile</h2>
-            <p class="text-ivory/60 leading-relaxed max-w-xl">
+            <h2 class="text-2xl !text-ivory mb-4 group-hover:text-gold transition-colors">Istituzioni &amp; Impegno Civile</h2>
+            <p class="text-ivory/80 leading-relaxed max-w-xl">
               Presidente del Consiglio Provinciale di Genova (1993&ndash;1997). Una carriera dedicata
               alle istituzioni genovesi, dalla sanit&agrave; alla cultura, dalla politica alla ricerca.
             </p>
@@ -108,7 +149,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </a>
 
         <!-- Card: Eredit&agrave; -->
-        <a href="/ernesto-pallestrini" class="group bg-ivory-dark border border-border rounded-2xl p-8 hover:border-gold/40 hover:shadow-lg transition-all duration-300" data-animate="fade-up">
+        <a href="/ernesto-pallestrini" class="card-lift group bg-ivory-dark border border-border rounded-2xl p-8" data-animate="fade-up">
           <span class="inline-block text-gold uppercase tracking-[0.15em] text-xs font-semibold mb-4">Eredit&agrave;</span>
           <h2 class="text-xl mb-4 group-hover:text-gold transition-colors">Prof. Ernesto Pallestrini</h2>
           <p class="text-muted text-sm leading-relaxed">
