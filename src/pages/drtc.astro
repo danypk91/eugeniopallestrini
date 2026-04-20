@@ -1,0 +1,345 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+
+const promotori = [
+  'Alessandro Martini',
+  'Gaetano Paludetti',
+  'Luciano Cornacchia',
+  "Luigi D'Angelo",
+  'Bruno Morra',
+  'Eugenio Pallestrini',
+];
+
+const universitaUsa = [
+  { nome: 'NorthWestern University', citta: 'Chicago' },
+  { nome: 'Kresge Institute', citta: 'New Orleans' },
+  { nome: 'University of Louisiana', citta: 'New Orleans' },
+  { nome: 'Baylor College', citta: 'Houston' },
+];
+
+const studiosiUsa = [
+  { nome: 'James Jerger', ruolo: 'Audiologia' },
+  { nome: 'Charles Berlin', ruolo: 'Audiologia e neuroscienze' },
+  { nome: 'Bobby Alford', ruolo: 'Direttore, Baylor College' },
+];
+
+const team = [
+  { nome: 'Franco Torrielli', ruolo: 'Chirurgia Maxillo-Facciale' },
+  { nome: 'Agostino Tel', ruolo: 'Chirurgia Maxillo-Facciale' },
+  { nome: 'Giuseppe Viale', ruolo: 'Neurochirurgia' },
+  { nome: 'Guido Rosadini', ruolo: 'Neurofisiologia' },
+  { nome: 'Alfredo Rivara', ruolo: 'Oculistica' },
+  { nome: 'Marco Rosa', ruolo: 'Neuroradiologia' },
+  { nome: 'Giovanni Regesta', ruolo: 'Neurologia — direttore dal 2001' },
+];
+
+const approfondimenti = [
+  {
+    titolo: 'Con la Testa sul Collo',
+    descrizione: 'Articolo del Secolo XIX di Mario Paternostro che annuncia la fondazione del Dipartimento, 15 dicembre 1991.',
+    url: 'https://www.facebook.com/photo?fbid=25507392355610443&set=a.1080251015417917',
+  },
+  {
+    titolo: 'Fascicolo Dipartimentale (1993)',
+    descrizione: "Fascicolo illustrativo dell'organizzazione dipartimentale, realizzato con Agostino Tel e la collaborazione del direttore sanitario Gianfranco Ciappina.",
+    url: 'https://www.instagram.com/p/DUvfU2ICCvc/',
+  },
+  {
+    titolo: "L'unità logistica dipartimentale",
+    descrizione: "Documento sulla centralità dell'unità logistica come elemento distintivo del DRTC.",
+    url: 'https://www.museoattore.it/sito/wp-content/uploads/2014/11/Dipartimento-Testa-Collo-rid.pdf',
+  },
+  {
+    titolo: 'Studio di riferimento — IJAP 2023',
+    descrizione: 'Pubblicazione su Italian Journal of Audiology and Phoniatrics che documenta il viaggio di studio del 1980.',
+    url: 'https://audiologiaefoniatria.padovauniversitypress.it/system/files/papers/IJAP-2023-2-8.pdf',
+  },
+];
+---
+
+<BaseLayout
+  title="DRTC — Dipartimento Regionale Testa Collo | Eugenio Pallestrini"
+  description="Il primo Dipartimento Regionale Testa Collo italiano, fondato nel 1991 all'Ospedale San Martino di Genova per iniziativa della Regione Liguria."
+>
+
+  <PageHero
+    title="DRTC — Dipartimento Regionale Testa Collo"
+    subtitle="Ospedale San Martino, Regione Liguria — Genova 1991. Il primo Dipartimento Regionale Testa Collo italiano."
+  />
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6 space-y-14">
+
+      <!-- Intro -->
+      <div data-animate="fade-up">
+        <p class="text-lg text-muted leading-relaxed">
+          Un'iniziativa pionieristica della Regione Liguria, realizzata in significativo anticipo
+          sulla legge nazionale dei Dipartimenti. Un modello organizzativo fondato sulla
+          <em>unit&agrave; logistica</em>: tutte le specializzazioni medico-chirurgiche dedicate alla
+          patologia cranio cervico-facciale riunite in un unico edificio, per un'assistenza
+          realmente efficace e non solo amministrativa.
+        </p>
+      </div>
+
+      <!-- Origini: viaggio studio USA 1980 -->
+      <div data-animate="fade-up">
+        <h2>Le Origini — Viaggio di Studio negli Stati Uniti, 1980</h2>
+        <p class="text-muted leading-relaxed mt-4">
+          La prima idea di realizzazione del DRTC ligure &egrave; sorta da un viaggio di studio
+          e confronto con alcune Universit&agrave; degli Stati Uniti, compiuto nel 1980 da un gruppo
+          di allora giovani clinici e ricercatori italiani.
+        </p>
+
+        <h3 class="mt-8">Il gruppo italiano</h3>
+        <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {promotori.map(nome => (
+            <div class="flex items-center gap-3 text-muted text-sm">
+              <span class="w-2 h-2 rounded-full bg-gold/60 shrink-0"></span>
+              {nome}
+            </div>
+          ))}
+        </div>
+
+        <h3 class="mt-10">Le universit&agrave; visitate</h3>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {universitaUsa.map(({ nome, citta }) => (
+            <div class="p-5 bg-white border border-border rounded-xl">
+              <h4>{nome}</h4>
+              <p class="text-sm text-muted mt-1">{citta}</p>
+            </div>
+          ))}
+        </div>
+
+        <h3 class="mt-10">Gli studiosi incontrati</h3>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {studiosiUsa.map(({ nome, ruolo }) => (
+            <div class="p-5 bg-white border border-border rounded-xl">
+              <h4>{nome}</h4>
+              <p class="text-sm text-muted mt-1">{ruolo}</p>
+            </div>
+          ))}
+        </div>
+
+        <p class="text-muted leading-relaxed mt-8">
+          Nel Baylor College, allora diretto da Bobby Alford, Pallestrini pot&eacute; osservare
+          uno dei primi <em>Head and Neck Department</em> con unione logistica e collegamento
+          funzionale di tutte le specializzazioni mediche e chirurgiche dedicate allo studio
+          e alla cura delle malattie neurologiche e cranio cervico-facciali, collocate in
+          un unico edificio. Questa unit&agrave; logistica consentiva un'estensione ed un
+          incremento delle capacit&agrave; terapeutiche nella patologia cranio cervico-facciale.
+        </p>
+      </div>
+
+      <!-- La nascita a Genova -->
+      <div data-animate="fade-up">
+        <h2>La Nascita a Genova</h2>
+        <p class="text-muted leading-relaxed mt-4">
+          A Genova, in maniera del tutto casuale, si era quasi realizzato qualcosa di simile
+          nel <strong>Padiglione delle Specialit&agrave; dell'Ospedale San Martino</strong>:
+          quasi tutte le specializzazioni dedicate alla patologia neurologica e cranio facciale
+          erano gi&agrave; presenti, ma mancava la Neurochirurgia, al cui posto era stata
+          inserita l'Urologia del grande <strong>Luciano Giuliani</strong>.
+        </p>
+        <p class="text-muted leading-relaxed mt-4">
+          Quando Giuliani stava per concludere il progetto di una nuova e pi&ugrave; ampia
+          Clinica Urologica, con la conseguente liberazione di un possibile spazio neurochirurgico,
+          Pallestrini propose direttamente alla Regione la realizzazione del primo
+          Dipartimento Regionale Testa Collo italiano.
+        </p>
+        <p class="text-muted leading-relaxed mt-4">
+          Non era un'operazione semplice: il progetto suscitava reazioni interne e la
+          Direzione Sanitaria intendeva collocare in quegli spazi la Medicina del Lavoro.
+        </p>
+
+        <div class="mt-8 p-6 md:p-8 bg-ivory-dark border border-border rounded-2xl">
+          <p class="text-muted leading-relaxed">
+            In un colloquio a tre nella sede della Regione Liguria con l'allora
+            <strong>Assessore alla Sanit&agrave; Rosavio Bellasio</strong> e con il
+            <strong>Direttore Sanitario Gaetano Cavallaro</strong>, Pallestrini present&ograve;
+            l'ipotesi di Dipartimento. L'Assessore si convinse della sensatezza e utilit&agrave;
+            del progetto, facendolo successivamente approvare con delibera regionale
+            e affidando il Dipartimento Testa Collo all'Ospedale San Martino.
+          </p>
+        </div>
+
+        <p class="text-muted leading-relaxed mt-6">
+          Gaetano Cavallaro divenne da allora uno dei pi&ugrave; grandi sostenitori del DRTC,
+          realizzato in significativo anticipo sulla legge nazionale dei Dipartimenti.
+          Si parl&ograve; allora di un <em>atto amministrativo pilota</em> della Regione Liguria.
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div data-animate="fade-up">
+        <h2>Tappe fondamentali</h2>
+        <div class="mt-8 space-y-10">
+
+          <div class="relative pl-8 border-l-2 border-gold/30">
+            <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gold"></div>
+            <p class="text-sm text-gold font-semibold uppercase tracking-wide mb-2">1980</p>
+            <h3>Viaggio di studio negli Stati Uniti</h3>
+            <p class="mt-3 text-muted leading-relaxed">
+              Confronto con NorthWestern, Kresge Institute, University of Louisiana e Baylor College.
+              Nasce l'idea di un dipartimento testa-collo con unit&agrave; logistica.
+            </p>
+          </div>
+
+          <div class="relative pl-8 border-l-2 border-gold/30">
+            <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gold"></div>
+            <p class="text-sm text-gold font-semibold uppercase tracking-wide mb-2">1991</p>
+            <h3>Fondazione del DRTC</h3>
+            <p class="mt-3 text-muted leading-relaxed">
+              La Regione Liguria approva con delibera il primo Dipartimento Regionale Testa Collo
+              italiano, affidandolo all'Ospedale San Martino.
+            </p>
+          </div>
+
+          <div class="relative pl-8 border-l-2 border-gold/30">
+            <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gold"></div>
+            <p class="text-sm text-gold font-semibold uppercase tracking-wide mb-2">1993</p>
+            <h3>Fascicolo Dipartimentale</h3>
+            <p class="mt-3 text-muted leading-relaxed">
+              Pubblicazione del fascicolo illustrativo dell'organizzazione dipartimentale,
+              curato con Agostino Tel e il direttore sanitario Gianfranco Ciappina.
+            </p>
+          </div>
+
+          <div class="relative pl-8 border-l-2 border-gold/30">
+            <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gold"></div>
+            <p class="text-sm text-gold font-semibold uppercase tracking-wide mb-2">2001</p>
+            <h3>Successione alla direzione</h3>
+            <p class="mt-3 text-muted leading-relaxed">
+              Terminato il mandato di Pallestrini, la direzione passa a Giovanni Regesta
+              e successivamente a Luciano Castellan.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Team -->
+      <div data-animate="fade-up">
+        <h2>Il Team Dipartimentale</h2>
+        <p class="text-muted leading-relaxed mt-4">
+          Aderirono al Dipartimento colleghi e amici personali, che hanno collaborato
+          alla sua formazione e allo sviluppo dell'attivit&agrave; clinica e scientifica.
+        </p>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {team.map(({ nome, ruolo }) => (
+            <div class="p-6 bg-white border border-border rounded-xl">
+              <h4>{nome}</h4>
+              <p class="text-sm text-muted mt-1">{ruolo}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-muted leading-relaxed mt-6">
+          Il Dipartimento era favorevolmente accettato da tutto il personale medico,
+          paramedico e tecnico del Padiglione delle Specialit&agrave;.
+        </p>
+      </div>
+
+      <!-- Organizzazione e attività -->
+      <div data-animate="fade-up">
+        <h2>Organizzazione e Attivit&agrave; Scientifica</h2>
+
+        <h3 class="mt-6">Formazione e riunioni interdisciplinari</h3>
+        <p class="text-muted leading-relaxed mt-3">
+          L'organizzazione dipartimentale si esprimeva in corsi formativi e periodiche
+          riunioni scientifiche, con discussione di casi interdisciplinari e partecipazione
+          dei medici delle varie discipline. Furono istituite riunioni programmate di
+          aggiornamento comuni per il personale infermieristico e tecnico dell'intero
+          dipartimento, con conseguente accrescimento delle competenze nei vari settori.
+        </p>
+
+        <h3 class="mt-8">Progressione chirurgica</h3>
+        <p class="text-muted leading-relaxed mt-3">
+          Dal punto di vista chirurgico, l'organizzazione dipartimentale permise una
+          progressione delle tecniche, con la realizzazione di interventi sino ad allora
+          non praticati: ad esempio le chirurgie di <strong>cranioresezione e ricostruzione
+          della base cranica</strong>, nelle quali si alternavano varie equipe chirurgiche
+          nelle diverse fasi dell'intervento.
+        </p>
+
+        <h3 class="mt-8">Collaborazione oncologica</h3>
+        <p class="text-muted leading-relaxed mt-3">
+          Obbligatoria la collaborazione oncologica con l'<strong>IST</strong>, con la
+          Radiologia e la Radioterapia: il paziente oncologico era sempre valutato
+          simultaneamente da tutte le competenze coinvolte, con discussione del caso
+          e scelta condivisa della terapia.
+        </p>
+
+        <h3 class="mt-8">Riconoscimenti strutturali</h3>
+        <p class="text-muted leading-relaxed mt-3">
+          Questa forma collaborativa fu premiata dalla Regione e dall'Ospedale con
+          ristrutturazioni delle sale operatorie e delle degenze, e con l'adeguamento
+          delle attrezzature ai pi&ugrave; moderni standard.
+        </p>
+      </div>
+
+      <!-- Rilevanza nazionale e internazionale -->
+      <div data-animate="fade-up">
+        <h2>Rilevanza Nazionale e Internazionale</h2>
+        <p class="text-muted leading-relaxed mt-4">
+          L'istituzione ufficiale del primo DRTC destava interesse nell'ambito amministrativo
+          sanitario nazionale: Pallestrini fu chiamato a un convegno di studio sui dipartimenti
+          alla <strong>Universit&agrave; Cattolica di Milano</strong>.
+        </p>
+        <p class="text-muted leading-relaxed mt-4">
+          Present&ograve; inoltre il Dipartimento in un ciclo di conferenze tenuto con
+          <strong>Gianni Melioli</strong> in <strong>quattro grandi universit&agrave; cinesi</strong>.
+          Il ciclo determin&ograve; la visita del DRTC da parte di una commissione di professori
+          universitari cinesi.
+        </p>
+        <p class="text-muted leading-relaxed mt-4">
+          Una richiesta di gemellaggio avanzata da un'universit&agrave; cinese non ebbe per&ograve;
+          seguito, per l'opposizione dell'allora Direttore Generale che temeva un'eccessiva
+          autonomia della struttura.
+        </p>
+      </div>
+
+      <!-- Eredità -->
+      <div data-animate="fade-up">
+        <h2>Evoluzione ed Eredit&agrave;</h2>
+        <p class="text-muted leading-relaxed mt-4">
+          Nel 2001, al termine del mandato di Pallestrini, il Dipartimento fu diretto da
+          <strong>Giovanni Regesta</strong> e successivamente da <strong>Luciano Castellan</strong>.
+          Fu poi trasformato nell'attuale <em>Dipartimento di Neuroscienze e Testa-Collo</em>
+          dell'Ospedale San Martino, entrando a far parte di un DIAR (Dipartimento
+          interaziendale).
+        </p>
+        <div class="mt-6 p-8 bg-ivory-dark border border-border rounded-2xl">
+          <p class="font-serif text-xl italic text-night-deep leading-relaxed">
+            &laquo;I dipartimenti interaziendali sono un fatto burocratico e amministrativo,
+            ma non comportano necessariamente quei vantaggi medici che solo l'unit&agrave;
+            logistica dipartimentale riesce a determinare.&raquo;
+          </p>
+        </div>
+      </div>
+
+      <!-- Approfondimenti -->
+      <div data-animate="fade-up">
+        <h2>Documenti e Approfondimenti</h2>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {approfondimenti.map(({ titolo, descrizione, url }) => (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener"
+              class="card-lift group p-6 bg-white border border-border rounded-xl"
+            >
+              <h4 class="group-hover:text-gold transition-colors">{titolo}</h4>
+              <p class="text-sm text-muted mt-2 leading-relaxed">{descrizione}</p>
+              <span class="inline-flex items-center gap-2 mt-4 text-sm font-medium text-gold group-hover:gap-3 transition-all">
+                Apri documento
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
